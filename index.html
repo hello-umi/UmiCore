@@ -1,0 +1,335 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="https://static.helloumi.com/landbot/files/favico/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      html, body {
+        font-family: 'Montserrat', sans-serif !important;
+      }
+      .main-title {
+        letter-spacing: -.7px;
+      }
+      pre {
+        background-color: #1E1E1E;
+      }
+      .href {
+        position: absolute;
+        right: calc(100% + 10px);
+      }
+      #main-content .section:first-child {
+        padding-top: 0;
+      }
+    </style>
+    <title>Landbot.io | Inter Applications Communication Engine</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <section class="hero is-danger" style="background-color: rgb(233, 0, 114);">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <img src="https://media.helloumi.com/brands/helloumi.png" width="60" heigth="60" alt="" style="margin-bottom: 10px;">
+          <h1 class="title main-title">
+            landbot
+          </h1>
+          <h2 class="subtitle main-title">
+            Inter Applications Communication Engine
+          </h2>
+        </div>
+      </div>
+      <div class="hero-foot">
+        <nav class="tabs is-boxed">
+          <div class="container">
+            <ul style="font-weight: 700;">
+              <li class="is-active"><a>Guide</a></li>
+              <li><a href="./examples.html">Examples</a></li>
+              <!-- <li><a href="./demo1.html">Demos</a></li> -->
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <!-- End Header -->
+
+    <!-- CONTENT -->
+    <section class="section">
+      <div class="columns">
+
+        <!-- Side Menu -->
+        <div class="column is-2 is-hidden-touch">
+          <aside class="menu">
+            <p class="menu-label">
+              Setup
+            </p>
+            <ul class="menu-list">
+              <li>
+                <a href="#basics">Basic Setup</a>
+                <ul>
+                  <li><a href="#basic-setup-embed">Embed</a></li>
+                  <li><a href="#basic-setup-livechat">Livechat</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#advanced">Advanced Setup</a>
+                <ul>
+                  <li><a href="#advanced-setup-embed">Embed</a></li>
+                  <li><a href="#advanced-setup-livechat">Livechat</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p class="menu-label">
+              How to
+            </p>
+            <ul class="menu-list">
+              <li>
+                <a href="#usage">Usage</a>
+                <ul>
+                  <li><a href="#usage-embed">Embed</a></li>
+                  <li><a href="#usage-livechat">Livechat</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#events">Events</a>
+                <ul>
+                  <li><a href="#events-prebuilt">Pre-built events</a></li>
+                  <li><a href="#events-custom">Custom events</a></li>
+                </ul>
+              </li>
+            </ul>
+          </aside>
+        </div>
+        <!-- End Side Menu -->
+
+        <!-- Web Content -->
+        <div id="main-content" class="column is-10">
+          
+          <!-- Basic Setup -->
+          <section class="section">
+            <div class="container is-fluid">
+              <div class="content">
+                  <h1 class="title">Basic Setup
+                    <a href="#basics" name="basics" class="href">#</a>
+                  </h1>
+                  <p>
+                    Choose the landbot app that better fits your needs.
+                  </p>
+                  <ul>
+                    <li>Embed</li>
+                    <li>Livechat</li>
+                  </ul>
+                  <p>You can use as many <strong>Embed</strong> Landbots as you wish, but only one <strong>Livechat</strong> application per site.</p>
+                  
+                  <h3>Embed
+                    <a href="#basic-setup-embed" name="basic-setup-embed" class="href">#</a>
+                  </h3>
+                  <p>Copy your landbot snippet and paste it into your web site. Your code should look like this:</p>
+                  <pre><code class="html">&lt;div style=&quot;width: 100%; height: 500px; position: relative; overflow: hidden;&quot;&gt;
+  &lt;iframe width=&quot;100%&quot; height=&quot;100%&quot; frameborder=&quot;0&quot; src=&quot;{LANDBOT_URL}&quot; style=&quot;position: absolute; left:0; right:0; bottom:0; top:0; border:0;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</code></pre>
+
+                  <h3>Livechat
+                    <a href="#basic-setup-livechat" name="basic-setup-livechat" class="href">#</a>
+                  </h3>
+                  <p>Copy your landbot snippet and paste it into your web site. Your code should look like this:</p>
+                  <pre><code class="html">&lt;div id=&quot;umiwebchat-container&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+  var LandbotLiveConfig = { 
+    index: '{LANDBOT_URL}', 
+    accent: '#d35f8f' // Livechat bubble color
+  };
+&lt;/script&gt;
+&lt;script src=&quot;https://static.helloumi.com/umiwebchat/umiwebchat.js&quot; defer&gt;&lt;/script&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <!-- End Basic Setup -->
+
+          <hr>
+
+          <!-- Advanced Setup -->
+          <section class="section">
+            <div class="container is-fluid">
+              <div class="content">
+                <h1>Advanced Setup
+                  <a href="#advanced" name="advanced" class="href">#</a>
+                </h1>
+                <p>A landbot can trigger custom events that our site can listen to. The same way a landbot can listen to external events triggered from your site.</p>
+                <p>An advanced setup is required to use the <b>events based interface</b> in your site.</p>
+
+                <h3>Embed
+                  <a href="#advanced-setup-embed" name="advanced-setup-embed" class="href">#</a>
+                </h3>
+                <p>
+                  If you're using the landbot "Embed" mode, an "Access Point" module is needed to get in touch with your landbot. 
+                </p>
+                <ul>
+                  <li>Just add this code into your site only once. Even if multiple "Embed" landbots are used in the same page, just one script is needed.</li>
+                </ul>
+                <pre><code class="html">&lt;script src=&quot;https://static.helloumi.com/umicore/UmiAccessPoint.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                <ul>
+                  <li>Your landbot <code>iframe</code> needs a name in order to be identified. Otherwise, communication won't be stablished. Give each landbot of your site a name.</li>
+                </ul>
+                <pre><code class="html">&lt;iframe name=&quot;{LANDBOT_NAME}&quot; ... &gt;&lt;/iframe&gt;</code></pre>
+
+                <p>Then, this would be the resulting code snippet in your site:</p>
+                <pre><code class="html">&lt;div style=&quot;width: 100%; height: 500px; position: relative; overflow: hidden;&quot;&gt;
+  &lt;iframe name=&quot;{LANDBOT_NAME}&quot; width=&quot;100%&quot; height=&quot;100%&quot; frameborder=&quot;0&quot; src=&quot;{LANDBOT_URL}&quot; style=&quot;position: absolute; left:0; right:0; bottom:0; top:0; border:0;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;script src=&quot;https://static.helloumi.com/umicore/UmiAccessPoint.js&quot;&gt;&lt;/script&gt;</code></pre>
+                  <p></p>
+
+                <h3>Livechat
+                  <a href="#advanced-setup-livechat" name="advanced-setup-livechat" class="href">#</a>
+                </h3>
+                <p>
+                  See <a href="#advanced-setup-livechat">Basic Setup</a>. It already includes advanced features.
+                </p>
+              </div>
+            </div>
+          </section>
+          <!-- End Advanced Setup -->
+          
+          <hr>
+
+          <!-- Usage -->
+          <section class="section">
+            <div class="container is-fluid">
+              <div class="content">
+                <h1>Usage
+                  <a href="#usage" name="usage" class="href">#</a>
+                </h1>
+
+                <h3>Embed
+                  <a href="#usage-embed" name="usage-embed" class="href">#</a>
+                </h3>
+                <p>After an advanced setup, we need to check everything is working. Follow the next steps:</p>
+                <ol>
+                  <li>
+                    <p>Create a <code>LandbotAP</code> object, which is the <i>Access Point</i> between your site and the landbot. Use the <code>iframe</code> name we set before as the first argument.</p>
+                    <pre><code class="javascript">var myLandbot = new LandbotAP('{LANDBOT_NAME}');</code></pre><br>
+                  </li>
+                  <li>
+                    <p>Execute the following code in your browser debugger tools console. If setup is correct, you should see an <b>active listener</b> log. If an error occur, make sure you've followed all <a href="#advanced-setup-embed">advanced setup</a> steps carefully.</p>
+                    <pre><code class="javascript">myLandbot.send("landbot-listen");</code></pre>
+                    <p>The successful log should look like: <code>[{LANDBOT_NAME}-LB] listener is active</code>.</p>
+                  </li>
+                </ol>
+
+                <h3>Livechat
+                  <a href="#usage-livechat" name="usage-livechat" class="href">#</a>
+                </h3>
+                <p>
+                  There's no need to create an <i>Access Point</i> for the <b>Livechat</b> mode landbot. The <i>Access Point</i> is included in the <a href="#basic-setup-livechat">basic setup</a> with a reserved name (<code>LandbotLivechat</code>). Check your communication interface with the following command:
+                </p>
+                <pre><code class="javascript">LandbotLivechat.send("landbot-listen");</code></pre>
+                <p>The successful log should look like: <code>[LandbotLivechat-LB] listener is active</code>.</p>
+
+                <div class="notification is-warning">
+                  The command we used before to check the interface connectivity is using a pre-built event listener in the landbot side (<code class="javascript">Landbot.on("landbot-listen", () => { // Actions... })</code>). See the <a href="#events">Events</a> section for better understanding.
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- End Usage -->
+
+          <hr>
+
+          <!-- Events -->
+          <section class="section">
+            <div class="container is-fluid">
+              <div class="content">
+
+                <h1>Events
+                  <a href="#events" name="events" class="href">#</a>
+                </h1>
+                <p>
+                  You can use our <a href="#events-prebuilt">pre-built events</a> or create <a href="#events-custom">custom</a> ones.
+                </p>
+
+                <h3>Pre-built events
+                  <a href="#events-prebuilt" name="events-prebuilt" class="href">#</a>
+                </h3>
+                <p>Your landbot is always listening to the following events:</p>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Event</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>landbot-listen</code></td>
+                      <td>Checks landbot connectivity with its parent page</td>
+                    </tr>
+                    <tr>
+                      <td><code>landbot-msg-send</code></td>
+                      <td>Send a custom message to the chat</td>
+                    </tr>
+                    <tr>
+                      <td><code>landbot-config</code></td>
+                      <td>Sets landbot config</td>
+                    </tr>
+                    <tr>
+                      <td><code>landbot-custom-data</code></td>
+                      <td>Sets landbot <code>customData</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Example:</p>
+                <pre><code class="javascript">myLandbot.send("landbot-msg-send", {
+  message: "My custom message",
+});</code></pre><br>
+
+                <p>But at the same time you can listen to the following landbot events:</p>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Event</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>landbot-load</code></td>
+                      <td>Landbot is loaded</td>
+                    </tr>
+                    <tr>
+                      <td><code>landbot-msg-receive</code></td>
+                      <td>Triggered when a new message is received</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Example:</p>
+                <pre><code class="javascript">myLandbot.on("landbot-msg-receive", (message) => {
+  console.log(message);
+});</code></pre><br>
+
+
+                <h3>Custom events
+                  <a href="#events-custom" name="events-custom" class="href">#</a>
+                </h3>
+                This is the most complex section, but the most powerful. See the <a href="./examples.html">Examples</a> section to getting started with the custom events features.
+              </div>
+            </div>
+          </section>
+          <!-- End Events -->
+
+        </div>
+        <!-- End Web Content -->
+
+      </div>
+    </section>
+    <!-- END CONTENT -->
+
+  </body>
+</html>
